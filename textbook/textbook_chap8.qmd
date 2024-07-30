@@ -1,0 +1,60 @@
+---
+title: "교과서 챕터 8"
+format: html
+editor: visual
+jupyter: python3
+---
+
+```{python}
+mpg = pd.read_csv("data/mpg.csv")
+mpg.shape
+
+```
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+```
+
+!pip install plotly
+
+# plt.figure(figsize=(5,4)) \# 사이즈 조정
+
+# 막대그래프
+
+# 유니크 값 알아내기
+
+# mpg\["drv"\].unique()
+
+### scatter() 사용하기
+
+```{python}
+sns.scatterplot(data=mpg,
+                x="displ", y="hwy",
+                hue="drv") \
+    .set(xlim=[3, 6], ylim=[10, 30])
+plt.show()
+plt.clf()
+
+```
+
+## plotly를 사용한 산점도
+
+```{python}
+px.scatter(data_frame=mpg,
+           x = "displ", y="hwy",
+           color="drv")
+```
+
+sns.barplot(data=df_mpg, x ="drv", y = "mean_hwy", hue = "drv") plt.show()\
+plt.clf() sns.barplot(data=df_mpg.sort_values("mean_hwy"), x ="drv", y = "mean_hwy", hue = "drv") plt.show()\
+\# 집단별 빈도표 만들기 df_mpg = mpg.groupby('drv', as_index = False)\
+.agg(n = ('drv', 'count')) df_mpg \## barplot() 사용하기 \`\`\`{python} df_mpg=mpg.groupby("drv", as_index=False)\
+.agg(mean_hwy=('hwy', 'mean')) df_mpg
+
+# 그래프 만들기
+
+sns.barplot(data = df_mpg, x = 'drv', y = 'n')
+
+#빈도 막대 그래프 만들기 \# 원자료 정보 따른 빈도들 다 들어감 sns.countplot(data = mpg, x = 'drv')

@@ -110,8 +110,9 @@ The `echo: false` option disables the printing of code (only output is displayed
 ![위키피디아 흑요석](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/ObsidianOregon.jpg/360px-ObsidianOregon.jpg) ![black](./img/img1.jpg) \## 이미지 파일 안에 저장한 경우
 
 ## 수식 입력 방법
-* 인라인 수식: $ 하나로 감싸준다. (본문에 입력)
-* 디스플레이 수식: $ 두개로 감싸준다. (독립적인 문단)
+
+-   인라인 수식: \$ 하나로 감싸준다. (본문에 입력)
+-   디스플레이 수식: \$ 두개로 감싸준다. (독립적인 문단)
 
 문장안에 숫자 $5^2$를 넣어보자.
 
@@ -120,7 +121,6 @@ The `echo: false` option disables the printing of code (only output is displayed
 $$
 \sqrt{2}^{3}_{1}
 $$
-
 
 # 8. 인용구
 

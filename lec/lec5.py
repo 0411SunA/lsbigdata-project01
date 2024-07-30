@@ -3,11 +3,22 @@ import numpy as np
 # seed = random값 고정해주는 역할 함.
 np.random.seed(2024)
 a = np.random.randint(1, 21, 10)
-# 함수정보 알고싶을 때 ? 함수 붙이기 -> help 창 보기
-# 시뮬레이션 다른사람에게 결과 공유할 때 
+
 print(a)
+a = np.random.choice(np.arange(1, 21), 10, False)
+print(a)
+# 함수정보 알고싶을 때 ? 함수 붙이기 -> help 창 보기
+# 시뮬레이션 다른사람에게 결과 공유할 때
 # 두 번째 값 추출
 print(a[1])
+
+# 빈도수 임의로 설정하는 법.
+a = np.random.choice(np.arange(1, 4), 100, True, np.array([2/5, 2/5, 1/5]))
+print(a)
+sum(a == 1)
+sum(a == 2)
+sum(a == 3)
+
 
 a[2:5]
 a[-1]
@@ -24,6 +35,8 @@ sum(x[2:1000:3])
 x = np.arange(0, 1001)
 sum(x[::3])
 
+x = np.arange(0, 1001)
+x
 #첫번째, 세번째, 다섯번째 값 추출
 print(a[[0,2,4]])
 #4번째 값 제거
@@ -46,6 +59,7 @@ a < 5000
 # a[조건을 만족하는 논리 연산자]
 (a > 2000) & (a < 5000)
 
+
 #!pip install pydataset
 import pydataset
 
@@ -59,6 +73,9 @@ model_names
 # 15 이상 25이하인 데이터 개수는?
 sum(((np_df>= 15) & (np_df <= 25)))
 model_names[(np_df>= 15) & (np_df <= 20)]
+
+#연습
+sum(((np_df>=15) & (np_df<=25)))
 
 # 평균 mpg 보다 높은 (이상) 자동차 대수는?
 sum(np_df >= np.mean(np_df))
@@ -106,7 +123,7 @@ x = np.where(a > 22000)
 x
 type(x) #튜플인 이유: 괄호로 끝남. 또한 ,)로 끝난다. -> 원소 하나임.
 # 튜플에서 첫번째 원소를 뽑아야겠다 [0]
-# 원소 11번째인 숫자 10을 꺼내야해서 두번째에 [0] 쓴거임.
+# 원소 1번째인 숫자 10을 꺼내야해서 두번째에 [0] 쓴거임.
 my_index = x[0][0]
 a[my_index]
 a[np.where(a > 22000)][0]
@@ -190,7 +207,7 @@ uneven_stacked
 uneven_stacked = np.vstack((vec1, vec2))
 uneven_stacked
 
-#연습문제
+#연습문제 각 원소에 5 더하기
 a = np.array([1, 2, 3, 4, 5])
 a + 5
 #문제 2.홀수 번째 요소만 추출
@@ -209,10 +226,10 @@ a
 b
 x = np.empty(6)
 x
-#짝수 x 짝수로 들어감
+#홀수
 x[[1,3,5]] = b
 x
-#홀수
+#짝수 x 짝수로 들어감
 x[[0, 2, 4]] = a
 x
 
