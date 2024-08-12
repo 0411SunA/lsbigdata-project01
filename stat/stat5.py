@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from scipy.stats import norm
 
 old_seat = np.arange(1, 29)
 np.random.seed(20240729)
@@ -71,7 +72,7 @@ sum(x**2) / (len(x) - 1)
 # E[(X-X**2)/(2X)]
 np.mean((x - x**2) / (2*x))
 
-#위 기법은 몬테카를로 적분. 확률변수 기대값을 구할 때, 표본을 많이 뽑은 후, 원하는 
+# 위 기법은 몬테카를로 적분. 확률변수 기대값을 구할 때, 표본을 많이 뽑은 후, 원하는 
 # 형태로 변형, 평균을 계산해서 기대값을 구하는 방법
 
 # 표본 10만개 추출해서 s**2 구하세요
