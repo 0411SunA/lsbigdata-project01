@@ -56,7 +56,7 @@ show(penguins, buttons = ['copy', 'excel', 'pdf'])
 
 카드안에 들어있는 텍스트 입니다.
 
-![팔머펭귄](penguins-cover.png)
+![팔머펭귄](palmerpenguins.png)
 
 :::
 
